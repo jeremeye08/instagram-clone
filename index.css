@@ -29,7 +29,7 @@ body {
     align-items: center;
 }
 
-.container{
+#container{
     width: 500px;
     background: #fff;
     padding-bottom: 10px;

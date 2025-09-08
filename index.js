@@ -28,3 +28,18 @@ const posts = [
     }
 ]
 
+// Logging out Number of Posts
+let numPosts = posts.length
+console.log(numPosts)
+
+// Creating the Posts and Appending it into the end of the Container
+for(let i=0;i<numPosts;i++) {
+    let newPost = document.createElement('div')
+    newPost.setAttribute('id','post-'+(i+1))
+    console.log({i})
+    console.log(newPost.id)
+
+    const containerEl = document.getElementById('container')
+    containerEl.appendChild(newPost)
+}
+
