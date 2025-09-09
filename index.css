@@ -4,38 +4,33 @@
     font-family: "Source Sans 3", sans-serif;
 }
 
-h2{
-    font-size: 18px;
-    font-weight: 800;
-}
-
-h3{
-    font-size: 16px;
-    font-weight: 400px;
-}
-
 p{
     font-size: 18px;
     font-weight: 800;
-    margin-left: 18px;
-    margin-bottom: 10px;
 }
 
 body {
     background: #c4c4c4;
     display: flex;
-    height: 100vh;
     justify-content: center;
-    align-items: center;
 }
 
 #container{
     width: 500px;
     background: #fff;
-    padding-bottom: 10px;
+    margin-top: 100px;
+}
+
+.posts{
+    padding-bottom: 20px;
+    border-bottom: 20px solid #c4c4c4;
 }
 
 header{
+    position: fixed;
+    background: #fff;
+    width: 500px;
+    height: 100px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -66,23 +61,33 @@ header .small-img{
     margin: 16px;
 }
 
+.small-p{
+    font-size: 16px;
+}
+
 .light{
     font-weight: 500;
 }
 
 .post-img{
     width: 100%;
+    margin: 0;
+    padding: 0;
 }
 
-.icons img{
+.icons-div{
+    display: flex;
+    align-items: center;
+    margin-top: 6px;
+    padding: 0;
+}
+
+.icons{
     width: 36px;
-    margin-top: 16px;
     margin-left: 16px;
-    margin-bottom: 10px;
 }
 
-.icons img:hover{
-    opacity: 0.5;
-    cursor: pointer;
-    transition: 0.3s;
+.margin-left-top{
+    margin-top: 10px;
+    margin-left: 18px;
 }
