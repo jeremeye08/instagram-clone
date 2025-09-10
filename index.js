@@ -70,6 +70,9 @@ for(let i=0;i<numPosts;i++) {
 
     let icons = document.createElement('div')
     icons.classList.add('icons-div')
+    let iconHeartLiked = document.createElement('img')
+    iconHeartLiked.src = 'images/icon-heart-liked.png'
+    iconHeartLiked.classList.add('icon-heart-liked')
     let iconHeart = document.createElement('img')
     iconHeart.src = 'images/icon-heart.png'
     iconHeart.classList.add('icons')
@@ -103,6 +106,7 @@ for(let i=0;i<numPosts;i++) {
     newTitle.appendChild(newAvatar)
     newTitle.appendChild(newDesc)
 
+    icons.appendChild(iconHeartLiked)
     icons.appendChild(iconHeart)
     icons.appendChild(iconComment)
     icons.appendChild(iconShare)

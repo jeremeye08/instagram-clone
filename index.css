@@ -76,6 +76,7 @@ header .small-img{
 }
 
 .icons-div{
+    position: relative;
     display: flex;
     align-items: center;
     margin-top: 6px;
@@ -90,4 +91,11 @@ header .small-img{
 .margin-left-top{
     margin-top: 10px;
     margin-left: 18px;
+}
+
+.icon-heart-liked{
+    position: absolute;
+    /* visibility: hidden; */
+    left: 16px;
+    width: 36px;
 }
