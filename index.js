@@ -28,6 +28,8 @@ const posts = [
     }
 ]
 
+let isNotLiked = {};
+
 // Logging out Number of Posts
 let numPosts = posts.length
 console.log(numPosts)
@@ -129,6 +131,27 @@ for(let i=0;i<numPosts;i++) {
 
     // Toggling Like button
 
+    isNotLiked[i] = true
+
+    // Double tapping Image
+    newImage.addEventListener('dblclick', () =>{
+        if(isNotLiked[i]===true){
+            iconHeart.classList.remove('visible')
+            iconHeart.classList.add('hidden')
+            iconHeartLiked.classList.remove('hidden')
+            iconHeartLiked.classList.add('visible')
+            isNotLiked[i]=!isNotLiked[i]
+            console.log(isNotLiked[i])
+        } else if(isNotLiked[i]===false){
+            iconHeartLiked.classList.remove('visible')
+            iconHeartLiked.classList.add('hidden')
+            iconHeart.classList.remove('hidden')
+            iconHeart.classList.add('visible')
+            isNotLiked[i]=!isNotLiked[i]
+            console.log(isNotLiked[i])
+        }
+    })
+
     // Like = Inactive
     iconHeart.addEventListener('mouseenter', () => {
         iconHeart.classList.add('icon-hover')
@@ -148,6 +171,7 @@ for(let i=0;i<numPosts;i++) {
         iconHeart.classList.add('hidden')
         iconHeartLiked.classList.remove('hidden')
         iconHeartLiked.classList.add('visible')
+        isNotLiked[i]=!isNotLiked[i]
     })
 
 
@@ -170,6 +194,7 @@ for(let i=0;i<numPosts;i++) {
         iconHeartLiked.classList.add('hidden')
         iconHeart.classList.remove('hidden')
         iconHeart.classList.add('visible')
+        isNotLiked[i]=!isNotLiked[i]
     })
 
     // Hover and Active effects on Comment buttons
