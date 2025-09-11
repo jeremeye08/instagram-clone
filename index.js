@@ -70,15 +70,20 @@ for(let i=0;i<numPosts;i++) {
 
     let icons = document.createElement('div')
     icons.classList.add('icons-div')
+
     let iconHeartLiked = document.createElement('img')
     iconHeartLiked.src = 'images/icon-heart-liked.png'
     iconHeartLiked.classList.add('icon-heart-liked')
+    iconHeartLiked.classList.add('hidden')
+
     let iconHeart = document.createElement('img')
     iconHeart.src = 'images/icon-heart.png'
     iconHeart.classList.add('icons')
+
     let iconComment = document.createElement('img')
     iconComment.src = 'images/icon-comment.png'
     iconComment.classList.add('icons')
+
     let iconShare = document.createElement('img')
     iconShare.src = 'images/icon-dm.png'
     iconShare.classList.add('icons')
@@ -121,5 +126,85 @@ for(let i=0;i<numPosts;i++) {
 
     const containerEl = document.getElementById('container')
     containerEl.appendChild(newPost)
-}
 
+    // Toggling Like button
+
+    // Like = Inactive
+    iconHeart.addEventListener('mouseenter', () => {
+        iconHeart.classList.add('icon-hover')
+    })
+
+    iconHeart.addEventListener('mouseleave', () => {
+        iconHeart.classList.remove('icon-hover')
+    })
+
+    iconHeart.addEventListener('mousedown', () => {
+        iconHeart.classList.add('icon-active')
+    })
+
+    iconHeart.addEventListener('mouseup', () =>{
+        iconHeart.classList.remove('icon-active')
+        iconHeart.classList.remove('visible')
+        iconHeart.classList.add('hidden')
+        iconHeartLiked.classList.remove('hidden')
+        iconHeartLiked.classList.add('visible')
+    })
+
+
+    // Like = Active
+    iconHeartLiked.addEventListener('mouseenter', () => {
+        iconHeartLiked.classList.add('icon-hover')
+    })
+
+    iconHeartLiked.addEventListener('mouseleave', () => {
+        iconHeartLiked.classList.remove('icon-hover')
+    })
+
+    iconHeartLiked.addEventListener('mousedown', () => {
+        iconHeartLiked.classList.add('icon-active')
+    })
+
+    iconHeartLiked.addEventListener('mouseup', () =>{
+        iconHeartLiked.classList.remove('icon-active')
+        iconHeartLiked.classList.remove('visible')
+        iconHeartLiked.classList.add('hidden')
+        iconHeart.classList.remove('hidden')
+        iconHeart.classList.add('visible')
+    })
+
+    // Hover and Active effects on Comment buttons
+
+    iconComment.addEventListener('mouseenter', () => {
+        iconComment.classList.add('icon-hover')
+    })
+
+    iconComment.addEventListener('mouseleave', () => {
+        iconComment.classList.remove('icon-hover')
+    })
+
+    iconComment.addEventListener('mousedown', () => {
+        iconComment.classList.add('icon-active')
+    })
+
+    iconComment.addEventListener('mouseup', () => {
+        iconComment.classList.remove('icon-active')
+    })
+
+    // Hover and Active effects on Share buttons
+
+    iconShare.addEventListener('mouseenter', () => {
+        iconShare.classList.add('icon-hover')
+    })
+
+    iconShare.addEventListener('mouseleave', () => {
+        iconShare.classList.remove('icon-hover')
+    })
+
+    iconShare.addEventListener('mousedown', () => {
+        iconShare.classList.add('icon-active')
+    })
+
+    iconShare.addEventListener('mouseup', () => {
+        iconShare.classList.remove('icon-active')
+    })
+}
