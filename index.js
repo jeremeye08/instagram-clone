@@ -1,4 +1,4 @@
-const posts = [
+let posts = [
     {
         name: "Vincent van Gogh",
         username: "vincey1853",
@@ -133,7 +133,7 @@ for(let i=0;i<numPosts;i++) {
 
     isNotLiked[i] = true
 
-    // Double tapping Image
+    // Double tapping Image to add likes or remove likes
     newImage.addEventListener('dblclick', () =>{
         if(isNotLiked[i]===true){
             iconHeart.classList.remove('visible')
@@ -141,15 +141,16 @@ for(let i=0;i<numPosts;i++) {
             iconHeartLiked.classList.remove('hidden')
             iconHeartLiked.classList.add('visible')
             isNotLiked[i]=!isNotLiked[i]
-            console.log(isNotLiked[i])
+            posts[i].likes++;
         } else if(isNotLiked[i]===false){
             iconHeartLiked.classList.remove('visible')
             iconHeartLiked.classList.add('hidden')
             iconHeart.classList.remove('hidden')
             iconHeart.classList.add('visible')
             isNotLiked[i]=!isNotLiked[i]
-            console.log(isNotLiked[i])
+            posts[i].likes--;
         }
+        newLikes.textContent = posts[i].likes + " likes"
     })
 
     // Like = Inactive
@@ -172,6 +173,8 @@ for(let i=0;i<numPosts;i++) {
         iconHeartLiked.classList.remove('hidden')
         iconHeartLiked.classList.add('visible')
         isNotLiked[i]=!isNotLiked[i]
+        posts[i].likes++;
+        newLikes.textContent = posts[i].likes + " likes"
     })
 
 
@@ -195,6 +198,8 @@ for(let i=0;i<numPosts;i++) {
         iconHeart.classList.remove('hidden')
         iconHeart.classList.add('visible')
         isNotLiked[i]=!isNotLiked[i]
+        posts[i].likes--;
+        newLikes.textContent = posts[i].likes + " likes"
     })
 
     // Hover and Active effects on Comment buttons
